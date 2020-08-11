@@ -14,7 +14,10 @@
 # limitations under the License.
 
 import numpy as np
-import PySpin
+try:
+    import PySpin
+except ModuleNotFoundError:
+    import pyspin as PySpin # ** Yann: installed as "pyspin" not "PySpin" by the FLIR installer (not sure why...) ** 
 
 class CameraError(Exception):
     pass
